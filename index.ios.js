@@ -9,15 +9,16 @@ import React, {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TextInput
 } from 'react-native';
+
+var SignUpForm = require('./shared/SignUpForm');
 
 class birdalert extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Image source={require('./images/logo.png')} />
-      </View>
+        <SignUpForm />
     );
   }
 }
