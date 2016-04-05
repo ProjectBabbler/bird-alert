@@ -71,13 +71,10 @@ var SignUpForm = React.createClass({
               ** postSubmit(['Username already taken', 'Email already taken']); // disable the loader and display an error message
               ** GiftedFormManager.reset('signupForm'); // clear the states of the form manually. 'signupForm' is the formName used
               */
+              this.props.onSignup();
             }
           }}
 
-        />
-
-        <GiftedForm.NoticeWidget
-          title='By signing up, you agree to the Terms of Service and Privacy Policity.'
         />
       </GiftedForm>
     );

@@ -10,15 +10,30 @@ import React, {
   Text,
   View,
   Image,
-  TextInput
+  TextInput,
+  Navigator,
 } from 'react-native';
 
 var SignUpForm = require('./shared/SignUpForm');
+var LandingPage = require('./shared/LandingPage');
+
 
 class birdalert extends Component {
   render() {
     return (
-        <SignUpForm />
+        <Navigator
+            initialRoute={{name: 'landing'}}
+            renderScene={(route, navigator) => {
+                switch (route.name) {
+                    case 'landing':
+                        return <LandingPage navigator={navigator}/>;
+                    case 'signup':
+                        return <SignUpForm onSignup={() => {
+                            navigator.pop();
+                        }} />;
+                }
+            }}
+        />
     );
   }
 }
