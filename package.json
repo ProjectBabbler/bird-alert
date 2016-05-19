@@ -6,10 +6,11 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "apsl-react-native-button": "^2.4.2",
-    "react": "^0.14.8",
-    "react-native": "^0.22.2",
-    "react-native-form": "^2.0.5",
-    "react-native-gifted-form": "0.0.6"
+    "apsl-react-native-button": "^2.5.0",
+    "kue": "^0.11.0",
+    "react": "^15.0.2",
+    "react-native": "^0.26.0",
+    "react-native-form": "^2.0.6",
+    "react-native-gifted-form": "0.0.7"
   }
 }
