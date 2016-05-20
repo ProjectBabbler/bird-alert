@@ -14,5 +14,5 @@ queue.process('notable', 3, (job, done) => {
         firebase.database().ref('ebird/notable').child(job.data.code).set(results).then(() => {
             console.log(`Saving ${job.data.code}`);
         }).then(done);
-    })
+    });
 });

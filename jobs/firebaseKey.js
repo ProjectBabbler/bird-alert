@@ -2,7 +2,7 @@ module.exports = {
   "type": "service_account",
   "project_id": "bird-alert",
   "private_key_id": "201f36839a8ddae197bdf27a6f56edffa1ca18f8",
-  "private_key": process.env.FIREBASE_SERVICE_KEY,
+  "private_key": process.env.FIREBASE_SERVICE_KEY.replace(/\\n/g, '\n'),
   "client_email": "birdalertserver@bird-alert.iam.gserviceaccount.com",
   "client_id": "112984072084433974884",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
