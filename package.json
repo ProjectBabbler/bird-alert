@@ -7,6 +7,9 @@
   },
   "dependencies": {
     "apsl-react-native-button": "^2.5.0",
+    "bird-locations": "^0.2.3",
+    "ebird-js": "^0.1.0",
+    "firebase": "^3.0.1",
     "kue": "^0.11.0",
     "react": "^15.0.2",
     "react-native": "^0.26.0",
