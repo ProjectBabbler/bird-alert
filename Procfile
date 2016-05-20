@@ -1,2 +1,2 @@
-web: jobs/Viewer.js
-worker: jobs/ProcessNotable.js
+web: node jobs/Viewer.js
+worker: node jobs/ProcessNotable.js
