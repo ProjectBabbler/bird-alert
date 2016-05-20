@@ -24,7 +24,6 @@ queue.process('need', 1, (job, done) => {
     instance.auth(job.data.username, process.env.TEMP_PASSWORD).then(() => {
         return instance.alerts.needs(job.data.code);
     }).then(results => {
-        console.log(results);
         firebase.database().ref('ebird/need').child(job.data.username).child(job.data.code).set(results).then(() => {
             console.log(`Saved ${job.data.username} ${job.data.code}`);
         }).then(done);
