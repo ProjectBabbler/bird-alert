@@ -21,7 +21,7 @@ new Promise((resolve, reject) => {
         resolve();
     });
 }).then(() => {
-    locations.getAll().then(list => {
+    return locations.getAll().then(list => {
         var ps = Object.keys(list).map(code => {
             return new Promise((resolve, reject) => {
                 let job = queue.create('notable', {
@@ -39,10 +39,11 @@ new Promise((resolve, reject) => {
         });
 
         return Promise.all(ps);
+    });
 }).then(() => {
     process.exit(0);
 }).catch((e) => {
     console.log(e);
     process.exit(1);
-})
+});
 

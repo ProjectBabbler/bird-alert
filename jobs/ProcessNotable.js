@@ -22,7 +22,7 @@ queue.process('need', 1, (job, done) => {
     console.log(`Processing for ${job.data.username} ${job.data.code}`);
     var instance = new ebird();
     instance.auth(job.data.username, process.env.TEMP_PASSWORD).then(() => {
-        return instance.need(job.data.code);
+        return instance.needs(job.data.code);
     }).then(results => {
         console.log(results);
         firebase.database().ref('ebird/need').child(job.data.username).child(job.data.code).set(results).then(() => {
