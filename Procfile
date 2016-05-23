@@ -1,2 +1,2 @@
-web: node jobs/Viewer.js
+web: npm start
 worker: node jobs/ProcessNotable.js

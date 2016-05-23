@@ -3,19 +3,25 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node ./www",
+    "start-debug": "DEBUG=birder-vs-birder:* npm start",
+    "dev": "heroku local web -f Procfile.local"
   },
   "dependencies": {
     "apsl-react-native-button": "^2.5.0",
     "bird-locations": "^0.2.3",
+    "compression": "^1.6.2",
     "ebird": "^0.5.0",
     "ebird-js": "^0.1.0",
+    "express": "^4.13.4",
     "firebase": "^3.0.1",
     "kue": "^0.11.0",
+    "newrelic": "^1.27.2",
     "react": "^15.1.0",
     "react-native": "^0.26.1",
     "react-native-form": "^2.0.6",
-    "react-native-gifted-form": "0.0.7"
+    "react-native-gifted-form": "0.0.7",
+    "swig": "^1.4.2"
   },
   "engines": {
     "node": ">= 6.0.0"
