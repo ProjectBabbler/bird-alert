@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var kue = require('kue');
+var firebase = require('../firebase');
 
 var queue = kue.createQueue({
   redis: process.env.REDIS_URL,
@@ -9,26 +10,19 @@ var queue = kue.createQueue({
 
 let username = 'buskergreg';
 router.use(bodyParser.json());
-router.post('/', (req, res) => {
+router.all('/', (req, res) => {
     var lat = req.body.latitude;
     var log = req.body.longitude;
-
-    let job = queue.create('location', {
-        title: `Location update for ${username}`,
-        username: username,
-        latitude: lat,
-        longitude: long,
-    })
-    .removeOnComplete(true)
-    .save(err => {
-        if (!err) {
-            console.log(job.id, job.title);
-        }
-        resolve();
+    firebase.database().ref('ebird/notable').child('US-CA').once('value').then(results => {
+        res.status(200);
+        res.setHeader('Content-Type', 'application/json');
+        res.send({
+            notable: results.val(),
+        });
+    }).catch(e => {
+        res.status(500);
+        res.send(JSON.stringify(e));
     });
-
-    res.status(200);
-    res.send();
 });
 
 module.exports = router;

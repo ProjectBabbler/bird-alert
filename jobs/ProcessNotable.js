@@ -1,7 +1,7 @@
 var kue = require('kue');
 var ebirdjs = require('ebird-js');
 var ebird = require('ebird');
-var firebase = require('./firebase');
+var firebase = require('../firebase');
 var queue = kue.createQueue({
   redis: process.env.REDIS_URL,
 });
