@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./www",
     "start-debug": "DEBUG=birder-vs-birder:* npm start",
-    "dev": "heroku local web -f Procfile.local"
+    "dev": "heroku local web -f Procfile.local",
+    "viewer": "heroku local:run node jobs/Viewer.js"
   },
   "dependencies": {
     "bird-locations": "^0.2.3",
